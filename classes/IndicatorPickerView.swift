@@ -18,6 +18,7 @@ open class IndicatorPickerView: UIView {
     public var font = UIFont.systemFont(ofSize: 16)
     public var indicatorColor = UIColor(red: 246/255, green: 90/255, blue: 92/255, alpha: 1)
     public var rowHeight: CGFloat = 68
+    public var selectedValue: String = ""
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -82,6 +83,7 @@ extension IndicatorPickerView: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     final public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedValue = titles[row]
         pickerView.reloadComponent(component)
     }
     
